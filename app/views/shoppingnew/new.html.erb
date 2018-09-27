@@ -1,0 +1,8 @@
+<h1>Novo shopping</h1>
+<%= form_for @shop, url: shoppingcreate_path do |f|%>
+<%= f.label :name, 'nome' %>
+<%= f.text_field :name %>
+<%= f.label :address, 'endereço' %>
+<%= f.text_field :address %>
+<%= f.submit 'Enviar' %>
+<%end%>

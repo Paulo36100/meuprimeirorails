@@ -1,0 +1,9 @@
+<h1>Alterar Shopping</h1>
+<%= form_for @shop, url: shoppingupdate_path do |f|%>
+<%= f.label :name, 'nome' %>
+<%= f.text_field :name %>
+<%= f.label :address, 'endereço' %>
+<%= f.text_field :address %>
+<%= f.submit 'Enviar' %>
+<%end%>
+

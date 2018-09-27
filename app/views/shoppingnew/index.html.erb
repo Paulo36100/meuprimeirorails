@@ -1,0 +1,16 @@
+<h1>Todos os shoppings</h1>
+
+<table border='2px' style='width': 50%>
+	<tr>
+		<td>Nome</td>
+		<td>Alterar</td>
+		<td>Remover</td>
+	</tr>
+<% @shops.each do |shop| %>
+<tr>
+		<td><%= link_to shop.name, shoppingshow_path(shop.id) %></td>
+		<td><%= link_to 'Alterar', shoppingedit_path(shop.id) %></td>
+		<td>Remover</td>
+</tr>
+<% end %> 
+</table>
