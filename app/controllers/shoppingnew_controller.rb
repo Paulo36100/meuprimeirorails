@@ -26,9 +26,21 @@ class ShoppingnewController < ApplicationController
   end
 
   def update
+  	shop = Shop.find_by(id: params['id'])
+  	if shop.update_attributes(permit)
+  		@msg = 'Salvo com sucesso'
+  	else
+  		@msg = shop.errors.messages
+  	end
   end
 
   def destroy
+    shop = Shop.find_by(id: params['id'])
+  	if shop.destroy
+  		@msg = 'Apagado com sucesso'
+  	else
+  		@msg = shop.errors.messages
+  	end  	
   end
 
 private

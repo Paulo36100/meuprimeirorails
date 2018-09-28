@@ -10,6 +10,7 @@
 <tr>
 		<td><%= link_to shop.name, shoppingshow_path(shop.id) %></td>
 		<td><%= link_to 'Alterar', shoppingedit_path(shop.id) %></td>
+		<td><%= link_to 'Remover', shoppingdestroy_path(shop.id), :method => 'delete' %></td>
 		<td>Remover</td>
 </tr>
 <% end %> 
