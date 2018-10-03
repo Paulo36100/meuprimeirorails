@@ -1,0 +1,23 @@
+<h1>Todas as lojas</h1>
+
+<table border='2px' style='width: 50%' >
+	<tr>
+		<td>Nome</td>
+		<td>Piso</td>
+		<td>Alterar</td>
+		<td>Remover</td>
+	</tr>
+<% @store.each do |stores| %>
+<tr>
+		<td><%= link_to stores.name, storesshow_path(stores.id) %></td>
+		<td>Piso</td>
+		<td><%= link_to 'Alterar', storesedit_path(stores.id) %></td>
+		<td><%= link_to 'Remover', storesdestroy_path(stores.id), :method => 'delete' %></td>
+</tr>
+
+<% end %> 
+<tr>
+	<td><%= link_to 'Adicionar uma loja', storesnew_path %></td>
+</tr>
+
+</table>

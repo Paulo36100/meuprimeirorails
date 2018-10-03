@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  get 'stores/index' => 'stores#index', as: 'storesindex'
-  get 'stores/show/:id' => 'stores#show', as: 'storesshow'
-  get 'stores/new' => 'stores#new', as: 'storesnew'
-  post 'stores/create' => 'stores#create', as: 'storescreate'
-  get 'stores/edit' => 'stores#edit', as: 'storesedit'
-  patch 'stores/update' => 'stores#update', as: 'storesupdate'
-  delete 'stores/destroy' => 'stores#destroy', as: 'storesdestroy'
+  get 'stores/index/' => 'stores#index', as: 'storesindex'
+  get 'stores/show/' => 'stores#show', as: 'storesshow'
+  get 'stores/new/' => 'stores#new', as: 'storesnew'
+  post 'stores/create/' => 'stores#create', as: 'storescreate'
+  get 'stores/edit/' => 'stores#edit', as: 'storesedit'
+  patch 'stores/update/' => 'stores#update', as: 'storesupdate'
+  delete 'stores/destroy/' => 'stores#destroy', as: 'storesdestroy'
 
 
 	get 'shoppingnew/index' => 'shoppingnew#index', as: 'shoppingindex'

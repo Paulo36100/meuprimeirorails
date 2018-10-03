@@ -1,5 +1,5 @@
 <h1>Alterar Loja</h1>
-<%= form_for @stores, url: storesupdate_path(@stores.id) do |f|%>
+<%= form_for @store, url: storesupdate_path(@store.id) do |f|%>
 <%= f.label :name, 'nome' %>
 <%= f.text_field :name %>
 <%= f.label :floor, 'piso' %>

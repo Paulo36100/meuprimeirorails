@@ -1,50 +1,46 @@
 class StoresController < ApplicationController
   def index
-    @stores = Store.all
-  end
-
-  def show
-    @stores = Store.find_by(id:params['id'])
+    @store = Store.all
   end
 
   def new
-    @stores= Store.new
+    @store= Store.new
   end
 
   def create
-    stores = Store.new(permit)
-    if  stores.save
+    store = Store.new(permit)
+    if  store.save
       @msg = 'Salvo com sucesso'
     else
-      @msg = stores.errors.messages
-  end
+      @msg = shop.errors.messages
+    end
   end
 
   def edit
-    @stores = Store.find_by(id:params['id'])
+@store = Store.find_by(id: params['id'])
   end
 
   def update
-    stores = Store.find_by(id: params['id'])
-    if stores.update_attributes(permit)
+store = Store.find_by(id: params['id'])
+    if store.update_attributes(permit)
       @msg = 'Salvo com sucesso'
     else
-      @msg = stores.errors.messages
+      @msg = shop.errors.messages
     end
   end
 
   def destroy
-    stores = Store.find_by(id: params['id'])
-    if stores.destroy
+    store = Store.find_by(id: params['id'])
+    if store.destroy
       @msg = 'Apagado com sucesso'
     else
-      @msg = stores.errors.messages
+      @msg = shop.errors.messages
     end   
   end
 
-private
+  private
 
   def permit
-    params[ 'store']. permit(:name, :floor, :idshopping)
+    params['store'].permit(:name, :floor, :idshopping)
   end
 end
